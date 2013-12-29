@@ -11,8 +11,7 @@ mail.select("[Gmail]/All Mail")
 
 result, data = mail.search(None, "ALL")
 
-ids = data[0]
-id_list = ids.split()
+id_list = data[0].split()
 
 c = collections.Counter()
 for email_id in id_list:
