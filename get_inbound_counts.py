@@ -6,8 +6,6 @@ import collections
 mail = imaplib.IMAP4_SSL('imap.gmail.com')
 mail.login('Your Email', 'Your Password')
 
-
-
 # mail.select("inbox") # connect to inbox.
 mail.select("[Gmail]/All Mail")
 
@@ -25,7 +23,6 @@ for email_id in id_list:
 	sender = [msg.headers.items()[i][1] for i, item in enumerate(msg.headers.items()) if item[0] == 'From']
 	print sender
 	c.update(sender)
-
 
 fo = open("inbound_emails.txt", "wb")
 for item in c:
